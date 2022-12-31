@@ -1,14 +1,15 @@
 # Aplicación para descargar música de YouTube
 ![Demo Image](https://github.com/practicaldev101/YouWishMP3/blob/master/docs/demo.png)
 
-> ## Instalación
+## Instalación
 Debes seguir los siguientes pasos para poder instalar
 
-> ### Windows
+### Windows
 
-> #### Uso
+#### Uso
 
-> ### Linux
+### Linux
+
 1. Clona el repositorio
 
 ```git clone https://github.com/practicaldev101/YouWishMP3.git```
@@ -21,7 +22,7 @@ Debes seguir los siguientes pasos para poder instalar
 
 ```pip install -r requirements.txt```
 
-> #### Uso
+#### Uso
 Al ejecutar este comando se te creará un archivo llamado **music.txt**.
 
 ```python main.py```
