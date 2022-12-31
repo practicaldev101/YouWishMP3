@@ -1,5 +1,6 @@
 # Aplicación para descargar música de YouTube
-![Demo Image](https://github.com/practicaldev101/YouWishMP3/blob/master/docs/demo.png)
+
+![Demo Image](https://github.com/practicaldev101/YouWishMP3/blob/main/docs/demo.png)
 
 ## Instalación
 Debes seguir los siguientes pasos para poder instalar
