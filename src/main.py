@@ -32,7 +32,7 @@ def main() -> None:
         print(Fore.YELLOW + "[ ! ] File " + filename + " not found, creating new one" + Fore.RESET)
         with open(filename, "w") as file: file.close()
         print(Fore.YELLOW + "[ ! ] Please, fill the file and try again" + Fore.RESET)
-
+    input("Press ENTER to exit...")
 
 if __name__ == "__main__":
     main()

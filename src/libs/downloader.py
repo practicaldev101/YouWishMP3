@@ -19,13 +19,17 @@ class Audio():
             tempColor = Fore.LIGHTRED_EX
         print(tempColor + text + Fore.RESET)
     
+    def safetyFilename(self, text: str):
+        modText = text.replace("|", "-")
+        return modText
+    
     def downloadAudio(self) -> True or False:
         try:
             self.video = YouTube(self.url, on_progress_callback=on_progress)
             self.printMessage("[ + ] Getting audio from video\n", "green")
             audio = self.video.streams.get_audio_only(subtype="webm")
             outputPath =  path.abspath("./" + self.directory)
-            filename = audio.title + ".mp3"
+            filename = self.safetyFilename(audio.title) + ".mp3"
             absFilePath = path.join(outputPath, filename)
 
             if path.exists(outputPath):

@@ -7,7 +7,17 @@ Debes seguir los siguientes pasos para poder instalar
 
 ### Windows
 
+1. Descarga el ejecutable entrando [aquí](https://github.com/practicaldev101/YouWishMP3/releases/tag/Windows)
+
+2. ¡Descomprimes el archivo ZIP y está listo!
+
 #### Uso
+
+> **Nota importante**: Desactiva cualquier antivirus. El ejecutable no tiene una licencia como tal, sin licencia se detecta como un falso positivo. Por lo que debes decirle a tus programas de protección que es confiable.
+
+- Para usar este programa en windows, solo basta con llenar el archivo **music.txt** con las URLs de música o videos que quieres descargar.
+
+- A continuación, ejectura el programa y saldrá una consola que te mostrará el proceso de descarga.
 
 ### Linux
 
