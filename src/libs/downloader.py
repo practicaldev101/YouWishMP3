@@ -3,6 +3,7 @@ from pytube.cli import on_progress
 from colorama import Fore
 import os
 from os import path
+import re
 class Audio():
 
     def __init__(self, url: str) -> None:
@@ -20,8 +21,16 @@ class Audio():
         print(tempColor + text + Fore.RESET)
     
     def safetyFilename(self, text: str):
-        modText = text.replace("|", "-")
-        return modText
+        modText = text.replace("|", "-").replace('/', '-').replace('\\', ',')
+        
+        emoji_pattern = re.compile(
+            "["
+        u"\U0001F600-\U0001F64F"  # emoticons
+        u"\U0001F300-\U0001F5FF"  # symbols & pictographs
+        u"\U0001F680-\U0001F6FF"  # transport & map symbols
+        u"\U0001F1E0-\U0001F1FF"  # flags (iOS)
+            "]+", flags = re.UNICODE)
+        return emoji_pattern.sub(r'', modText)
     
     def downloadAudio(self) -> True or False:
         try:
@@ -29,7 +38,7 @@ class Audio():
             self.printMessage("[ + ] Getting audio from video\n", "green")
             audio = self.video.streams.get_audio_only(subtype="webm")
             outputPath =  path.abspath("./" + self.directory)
-            filename = self.safetyFilename(audio.title) + ".mp3"
+            filename = u'' + self.safetyFilename(audio.title) + ".mp3"
             absFilePath = path.join(outputPath, filename)
 
             if path.exists(outputPath):
