@@ -19,7 +19,7 @@ __   __          _    _ _     _    ___  _________ _____
 """)
 
 def main() -> None:
-    # try:
+    try:
     logo()
     filename = "music.txt"
     with open(filename, "r") as file:
@@ -28,10 +28,10 @@ def main() -> None:
                 Audio(url).downloadAudio()
         file.close()
     print(Fore.GREEN + "[ + ] File " + filename + " finished." + Fore.RESET)
-    # except FileNotFoundError:
-    #     print(Fore.YELLOW + "[ ! ] File " + filename + " not found, creating new one" + Fore.RESET)
-    #     with open(filename, "w") as file: file.close()
-    #     print(Fore.YELLOW + "[ ! ] Please, fill the file and try again" + Fore.RESET)
+    except FileNotFoundError:
+        print(Fore.YELLOW + "[ ! ] File " + filename + " not found, creating new one" + Fore.RESET)
+        with open(filename, "w") as file: file.close()
+        print(Fore.YELLOW + "[ ! ] Please, fill the file and try again" + Fore.RESET)
     input("Press ENTER to exit...")
 
 if __name__ == "__main__":
