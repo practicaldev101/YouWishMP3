@@ -21,7 +21,7 @@ class Audio():
         print(tempColor + text + Fore.RESET)
     
     def safetyFilename(self, text: str):
-        modText = text.replace("|", "-").replace('/', '-').replace('\\', ',')
+        modText = text.replace("|", "-").replace('/', '-').replace('\\', ',').replace('?','').replace('¿','')
         
         emoji_pattern = re.compile(
             "["
@@ -37,10 +37,9 @@ class Audio():
             self.video = YouTube(self.url, on_progress_callback=on_progress)
             self.printMessage("[ + ] Getting audio from video\n", "green")
             audio = self.video.streams.get_audio_only(subtype="webm")
-            outputPath =  path.abspath("./" + self.directory)
-            filename = u'' + self.safetyFilename(audio.title) + ".mp3"
-            absFilePath = path.join(outputPath, filename)
-
+            outputPath =  r'' + path.abspath(r"./" + self.directory)
+            filename = r'' + self.safetyFilename(audio.title) + ".mp3"
+            absFilePath = r'' + path.join(outputPath, filename)
             if path.exists(outputPath):
                 self.printMessage("[ + ] Verifying that the file doesn't exist\n", "yellow")
 
